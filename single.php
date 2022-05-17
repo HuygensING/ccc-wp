@@ -92,7 +92,7 @@ Families<br>
 
 </div>
 <button type="button" name="button" class="hamburgerButton" id='hamburger' onclick="hamburger()">
-  <img src="images/icons/icon-hamburger.svg" alt="" class="hamburgerIcon"  id='hamburgerImg'>
+  <img src="<?php echo get_bloginfo( 'template_url' ); ?>/images/icons/icon-hamburger.svg" alt="" class="hamburgerIcon"  id='hamburgerImg'>
 </button>
 
 <section class="notesPop" id="notePop" aria-label="If you click on a note, the note appears here.">
@@ -100,12 +100,11 @@ Families<br>
 </section>
 
 
-<script src="js/hamburger-menu.js" charset="utf-8"></script>
-<script src="js/header2Navigation.js" charset="utf-8"></script>
-<script src="js/notesPopup.js" charset="utf-8"></script>
+<script src="<?php echo get_bloginfo( 'template_url' ); ?>/js/hamburger-menu.js" charset="utf-8"></script>
+<script src="<?php echo get_bloginfo( 'template_url' ); ?>/js/header2Navigation.js" charset="utf-8"></script>
+<script src="<?php echo get_bloginfo( 'template_url' ); ?>/js/notesPopup.js" charset="utf-8"></script>
 
 
-<script src="<?php echo get_bloginfo( 'template_url' ); ?>/js/header-to-links.js" charset="utf-8"></script>
 
 
 <?php get_footer(); ?>
