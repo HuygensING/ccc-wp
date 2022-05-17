@@ -114,6 +114,7 @@ function createFacetList(idOfResultList) {
 
 
 
+
   //console.log(parentList);
   document.getElementById('optionBox').innerHTML =  out;
 }
