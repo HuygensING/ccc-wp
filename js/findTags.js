@@ -109,7 +109,6 @@ function createFacetList(idOfResultList) {
       });
       //out += '<button type="button" name="button" onclick="clearList(\''+idOfResultList+'\')"">All results</button>'
     out += '</ul></div>'
-
   });
 
 
