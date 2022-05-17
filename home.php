@@ -26,7 +26,7 @@ $categoriesParentList = get_categories( array(
 
 
 <div class="layout_3col_vertNav">
-  <?php 
+  <?php
   get_template_part( 'template-parts/content', 'aside_nav' );
    ?>
 <div id="colContentWide" class="colContentWide centerContent">
@@ -65,38 +65,10 @@ $categoriesParentList = get_categories( array(
     </div>
 
 
-
-    <div>
-      <strong>Keywords</strong>
-      <ul>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Colonial exploration" name="Colonial exploration" > <label for="Colonial exploration">Colonial exploration</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Disease" name="Disease" > <label for="Disease">Disease</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Guide" name="Guide" > <label for="Guide">Guide</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Medicine" name="Medicine" > <label for="Medicine">Medicine</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Missionaries" name="Missionaries" > <label for="Missionaries">Missionaries</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Extinction trope" name="Extinction trope" > <label for="Extinction trope">Extinction trope</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Families" name="Families" > <label for="Families">Families</label></li>
-      </ul>
-    </div>
-
-
-    <div>
-      <strong>Keywords</strong>
-      <ul>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Colonial exploration" name="Colonial exploration" > <label for="Colonial exploration">Colonial exploration</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Disease" name="Disease" > <label for="Disease">Disease</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Guide" name="Guide" > <label for="Guide">Guide</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Medicine" name="Medicine" > <label for="Medicine">Medicine</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Missionaries" name="Missionaries" > <label for="Missionaries">Missionaries</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Extinction trope" name="Extinction trope" > <label for="Extinction trope">Extinction trope</label></li>
-        <li class="ccc_filterbox_checkbox"><input type="checkbox"  aria-label="select filter Families" name="Families" > <label for="Families">Families</label></li>
-      </ul>
-    </div>
-
   </section>
 
 </div>
-<section class="ccc_vignette_cards"  aria-label="overview of the vignettes">
+<section class="ccc_vignette_cards"  aria-label="overview of the vignettes" id="ccc_vignette_cards">
 
 
 

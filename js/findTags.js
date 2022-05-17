@@ -1,8 +1,11 @@
 function findInList(stringToFind, idOfResultList) {
+  console.log('**',stringToFind, idOfResultList);
+
+  let filterDisplayArr = []
 
 
   // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
+  let input, filter, ul, li, a, i, txtValue;
   // input = document.getElementById('myInput');
   // filter = input.value.toUpperCase();
 
@@ -51,7 +54,7 @@ let createTageButtons = function (idOfResultList) {
 
   // find all the tags items
   let elements2Filter = document.getElementsByClassName('tag')
-  console.log( elements2Filter );
+  //console.log( elements2Filter );
   for (i = 0; i < elements2Filter.length; i++) {
     tagNames.push(elements2Filter[i].innerHTML)
   }
@@ -73,7 +76,7 @@ let createTageButtons = function (idOfResultList) {
 }
 
 function createFacetList(idOfResultList) {
-  console.log(facetData);
+  //console.log(facetData);
 
   let parentList = [];
   // get parents
@@ -101,7 +104,7 @@ function createFacetList(idOfResultList) {
     out += '<ul>'
     parentItem.childList.forEach((cItem, c) => {
       out += '<li>'
-      out +='<button class="mButtonClean" onclick="findInList(\''+cItem.name+'\', \''+idOfResultList+'\')">'+cItem.name+'</button>'
+      out +='<button class="" onclick="findInList(\''+cItem.name+'\', \''+idOfResultList+'\')">'+cItem.name+'</button>'
       out += '</li>'
       });
       out += '<button type="button" name="button" onclick="clearList(\''+idOfResultList+'\')"">All results</button>'
@@ -111,9 +114,9 @@ function createFacetList(idOfResultList) {
 
 
 
-  console.log(parentList);
-  document.getElementById('filteronList1').innerHTML =  out;
+  //console.log(parentList);
+  document.getElementById('optionBox').innerHTML =  out;
 }
 
-createFacetList('main');
+createFacetList('ccc_vignette_cards');
 //createTageButtons('main');
