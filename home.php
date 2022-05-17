@@ -41,13 +41,17 @@ $categoriesParentList = get_categories( array(
 <div class="ccc_filterbox">
 
   <section class="ccc_filterbox_vis"  aria-label="filters for selecting a vignette">
-    <div>
+    <div class="ccc_filterbox_vL">
       <img src="<?php bloginfo('template_url'); ?>/images/icon_filter.png" alt="">
         <strong>Filters </strong>
         <div></div>
-      </div>
+    </div>
+    <div class="ccc_filterbox_vR">
+      <button type="button" name="button" onclick="clearList('ccc_vignette_cards')">Clear&nbsp;filters</button>
+      <button type="button" name="button" onclick="handleFilterbox()"><img src="<?php bloginfo('template_url'); ?>/images/icon_arrow_down.png" alt="" id="rotateIcon" aria-label="Show or hide the filters"></button>
+    </div>
 
-    <button type="button" name="button" onclick="handleFilterbox()"><img src="<?php bloginfo('template_url'); ?>/images/icon_arrow_down.png" alt="" id="rotateIcon" aria-label="Show or hide the filters"></button>
+
   </section>
 
   <section id="optionBox" class="ccc_filterbox_lists"  aria-label="Select a filter">

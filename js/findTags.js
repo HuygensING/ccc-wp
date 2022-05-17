@@ -107,7 +107,7 @@ function createFacetList(idOfResultList) {
       out +='<button class="" onclick="findInList(\''+cItem.name+'\', \''+idOfResultList+'\')">'+cItem.name+'</button>'
       out += '</li>'
       });
-      out += '<button type="button" name="button" onclick="clearList(\''+idOfResultList+'\')"">All results</button>'
+      //out += '<button type="button" name="button" onclick="clearList(\''+idOfResultList+'\')"">All results</button>'
     out += '</ul></div>'
 
   });
