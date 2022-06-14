@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="layout_3col_vertNav">
+<div class="layout_3col_vertNav fullHeight">
   <?php
   get_template_part( 'template-parts/content', 'aside_nav' );
    ?>
@@ -29,12 +29,16 @@
 
 
 
+
+
     // page content
     if (have_posts()) :
         while (have_posts()) : the_post();
+        $postId = get_the_ID();
+
             ?>
             <div class="ccc_topBlock">
-              <h1><?php the_title(); ?><em><?php echo get_post_meta($post->ID, 'subtitle', true); ?></em></h1>
+              <h1><?php the_title(); ?><em> <?php echo get_post_meta($post->ID, 'subtitle', true); ?></em></h1>
             </div>
             <?php
 
@@ -77,13 +81,36 @@ $related = $pod->field( 'vignettes_linked' );
 ?>
 
 <h2>Keywords</h2>
-Colonial exploration<br>
-Disease<br>
-Guide<br>
-Medicine<br>
-Missionaries<br>
-Extinction trope<br>
-Families<br>
+<ul class="cccNestedList">
+<?php
+  $post_categories = wp_get_post_categories( $postId, array(
+    'fields'       => 'all',
+    'parent'       => 0
+  ) );
+
+  if( $post_categories ){ // Always Check before loop!
+      foreach($post_categories as $catt){
+          echo '<li>'.$catt ->name.'<ul>';
+
+          $post_sub_categories = wp_get_post_categories( $postId, array(
+            'fields'       => 'all',
+            'parent'       => $catt ->term_id
+          ) );
+
+          foreach($post_sub_categories as $subcatt){
+            echo '<li>'.$subcatt ->name.'</li>';
+          }
+
+          echo '</ul></li>';
+
+
+
+
+      }
+  }
+
+?>
+</ul>
 
 
 

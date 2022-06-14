@@ -21,7 +21,7 @@ $categoriesParentList = get_categories( array(
 
 
 
-<div class="layout_3col_vertNav">
+<div class="layout_3col_vertNav fullHeight">
   <?php
   get_template_part( 'template-parts/content', 'aside_nav' );
    ?>

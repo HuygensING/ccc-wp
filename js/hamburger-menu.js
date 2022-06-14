@@ -4,12 +4,12 @@ let breakpoint = '1000px'
 function hamburger() {
     if (!hamburgerStatus) {
       showElems()
-      document.getElementById('hamburgerImg').setAttribute('src','images/icons/icon-x.svg' )
+      document.getElementById('hamburgerImg').setAttribute('src','https://colonialchildrenconnected.eu/wp-content/themes/ccc-wp/images/icons/icon-x.svg' )
       hamburgerStatus = true;
     }else {
       hideElems()
       hamburgerStatus = false;
-      document.getElementById('hamburgerImg').setAttribute('src', 'images/icons/icon-hamburger.svg');
+      document.getElementById('hamburgerImg').setAttribute('src', 'https://colonialchildrenconnected.eu/wp-content/themes/ccc-wp/images/icons/icon-hamburger.svg');
     }
 }
 
@@ -42,6 +42,6 @@ function hideElems() {
 function showElems() {
   const allHideOnSmall = document.querySelectorAll(".hideOnSmall");
   for (i = 0; i < allHideOnSmall.length; i++) {
-      allHideOnSmall[i].style.display = 'block'
+      allHideOnSmall[i].style.display = 'flex'
   }
 }

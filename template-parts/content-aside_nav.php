@@ -5,7 +5,7 @@
   <a href="/"  aria-label="Go to the homepage"><img src="<?php bloginfo('template_url'); ?>/images/logo_colonial_children_connected.png" alt=""></a>
 </section>
 
-<nav class="ccc_navigation" id="pageContentList">
+<nav class="ccc_navigation hideOnSmall" id="pageContentList">
   <?php
 
     $cleanMenu = wp_nav_menu( array(
@@ -21,6 +21,6 @@
 
 </nav>
 
-<section class="ccc_project"  aria-label="Partner">Part of the COAC project</section>
+<section class="ccc_project hideOnSmall"  aria-label="Partner">Part of the COAC project</section>
 
 </div>

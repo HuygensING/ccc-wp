@@ -2,6 +2,8 @@
 header2Navigation('ccc_main_content', 'pageContentList', false);
 
 function header2Navigation(contentId, navId, asList) {
+
+
   let preBlock = '<span class="ccc_pageContentLabel">Page content</span>';
   let postBlock = '';
   let preItem = '';
@@ -20,11 +22,14 @@ function header2Navigation(contentId, navId, asList) {
 
   // get all headers 2 and 3.
   var elems = contentElem.querySelectorAll('h2,h3');
+  console.log(elems);
 
   // adb anchor link to each header
   for (var i = 0; i < elems.length; i++) {
-      var hId = elems[i].getAttribute( 'id' );
-      document.body.innerHTML = document.body.innerHTML.replace('<h2 id="'+hId, '<a id="l'+hId+'"></a><h2 id="'+hId);
+      //var hId = elems[i].getAttribute( 'id' );
+      let hIdRaw = elems[i].innerHTML;
+      let hId = hIdRaw.replace(/\s+/g, '_').toLowerCase()
+      document.body.innerHTML = document.body.innerHTML.replace('<h2>'+hIdRaw, '<a id="l'+hId+'"></a><h2>'+hIdRaw);
   }
 
 
@@ -33,7 +38,8 @@ function header2Navigation(contentId, navId, asList) {
   var linkClass = '';
   for (var i = 0; i < elems.length; i++) {
       linkClass = '';
-      var hId = elems[i].getAttribute( 'id' );
+      let hIdRaw = elems[i].innerHTML;
+      let hId = hIdRaw.replace(/\s+/g, '_').toLowerCase()
       var hTxt = elems[i].innerText;
       var hTag = elems[i].tagName;
 
@@ -60,7 +66,7 @@ let positionTimeline = () => {
 
   // adb anchor link to each header
   for (var i = 0; i < elems.length; i++) {
-    if (elems[i].innerHTML == 'Timeline') {
+    if ( (elems[i].innerHTML == 'Timeline') || (elems[i].innerHTML == '2. Timeline') ) {
       let div = document.createElement("div");
       div.innerHTML = tlBlock
 
