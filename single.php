@@ -12,7 +12,7 @@
     <?php
 
 
-    $timeline = '<h2>Timeline</h2><div class="timeline" id="timelineBlock"><div class="timeline_inner">';
+    $timeline = '<span id="ltTemp"><div class="timeline" id="timelineBlock"><div class="timeline_inner">';
     $pod1 = pods( 'vignette', get_the_id() );
     $related2 = $pod1->field( 'timeline_items' );
     //print_r($related2);
@@ -25,7 +25,7 @@
        $timeline = $timeline.get_the_title( $id2 );
        $timeline = $timeline.'</div>';
      }
-     $timeline = $timeline.'</div></div>';
+     $timeline = $timeline.'</div></div></span>';
 
 
 
