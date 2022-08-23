@@ -11,22 +11,28 @@
 
     <?php
 
+    $associativeArray = array();
 
-    $timeline = '<span id="ltTemp"><div class="timeline" id="timelineBlock"><div class="timeline_inner">';
     $pod1 = pods( 'vignette', get_the_id() );
     $related2 = $pod1->field( 'timeline_items' );
     //print_r($related2);
       foreach ( $related2 as $rel2 ) {
        $id2 = $rel2[ 'ID' ];
-       $timeline = $timeline.'<div class="timelineItem">';
        $someField = get_post_meta( $id2, 'timeline_start_date', true );
+       $associativeArray += [get_the_title( $id2 ) => date_format(date_create($someField),"Y")];
 
-       $timeline = $timeline.'<strong>'.date_format(date_create($someField),"Y").'</strong><br>';
-       $timeline = $timeline.get_the_title( $id2 );
-       $timeline = $timeline.'</div>';
      }
-     $timeline = $timeline.'</div></div></span>';
 
+
+     asort($associativeArray);
+     $timeline = '<span id="ltTemp"><div class="timeline" id="timelineBlock"><div class="timeline_inner">';
+     foreach($associativeArray as $x=>$x_value) {
+        $timeline = $timeline.'<div class="timelineItem">';
+        $timeline = $timeline.'<strong>'.$x_value.'</strong><br>';
+        $timeline = $timeline.$x;
+        $timeline = $timeline.'</div>';
+        }
+      $timeline = $timeline.'</div></div></span>';
 
 
 
@@ -57,7 +63,6 @@
     endif;
     ?>
   </main>
-
 
 
 
@@ -134,4 +139,20 @@ $related = $pod->field( 'vignettes_linked' );
 
 
 
-<?php get_footer(); ?>
+<?php get_footer();
+
+// $timeline = '<span id="ltTemp"><div class="timeline" id="timelineBlock"><div class="timeline_inner">';
+// $pod1 = pods( 'vignette', get_the_id() );
+// $related2 = $pod1->field( 'timeline_items' );
+// //print_r($related2);
+//   foreach ( $related2 as $rel2 ) {
+//    $id2 = $rel2[ 'ID' ];
+//    $timeline = $timeline.'<div class="timelineItem">';
+//    $someField = get_post_meta( $id2, 'timeline_start_date', true );
+//
+//    $timeline = $timeline.'<strong>'.date_format(date_create($someField),"Y").'</strong><br>';
+//    $timeline = $timeline.get_the_title( $id2 );
+//    $timeline = $timeline.'</div>';
+//  }
+//  $timeline = $timeline.'</div></div></span>';
+?>
